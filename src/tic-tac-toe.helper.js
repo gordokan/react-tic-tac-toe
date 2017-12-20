@@ -1,5 +1,20 @@
-export function getBlankBoard(size) {
-  return Array(size).fill(null);
+export function getBlankBoard(width) {
+  let board = [];
+  for(let row = 0; row < width - 1; row++) {
+    let row = [];
+    for(let col = 0 ; col < width - 1; col++) {
+      row.push(0);
+    } 
+    board.push(row);
+  }
+  // new:
+  /**
+   * [[0, 0, 0], [0,0,0], [0,0,0]];
+   */
+  return board;
+
+  // old [null, null, null, null, null, null, null, null, null];
+  // return Array(size).fill(null);
 }
 
 export function calculateWinner(squares) {

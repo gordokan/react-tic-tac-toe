@@ -3,31 +3,24 @@ import React from 'react';
 import Square from './../square/square';
 
 export default class Board extends React.Component {
-  renderSquare(i) {
+  renderSquare(row, col) {
     return <Square 
-      value={this.props.squares[i]}
-      onClick={() => this.props.onClick(i)}/>;
+      value={this.props.squares[row][col]}
+      onClick={() => this.props.onClick(row, col)}/>;
   }
 
   render() {
+    let board = this.props.squares.map((row, rowIdx) => {
+      //[0,0,0], 0
+      let rows = this.row.map((cell, cellIdx) => {
+        return this.renderSquare(rowIdx, cellIdx);
+      });
+
+      return <div className="board-row">{rows}</div>
+    });
+
     return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
+      <div>{board}</div>
     );
   }
     }
