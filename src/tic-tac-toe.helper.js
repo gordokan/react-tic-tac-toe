@@ -1,9 +1,9 @@
 export function getBlankBoard(width) {
   let board = [];
-  for(let row = 0; row < width - 1; row++) {
+  for(let rowIdx = 0; rowIdx <= width - 1; rowIdx++) {
     let row = [];
-    for(let col = 0 ; col < width - 1; col++) {
-      row.push(0);
+    for(let colIdx = 0 ; colIdx <= width - 1; colIdx++) {
+      row.push(null);
     } 
     board.push(row);
   }
