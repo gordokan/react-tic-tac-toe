@@ -1,5 +1,16 @@
-export function getBlankBoard(size) {
-  return Array(size).fill(null);
+export function getBlankBoard(width) {
+  const board = [];
+  for(let col = 0; col <= width - 1; col++) {
+    board[col] =[];
+    for(let row = 0; row <= width -1; row++) {
+      board[col][row] = null;
+    }
+  }
+  return board;
+}
+
+export function getLocationDisplay(options) {
+  return `Move: (${options.row + 1}, ${options.col + 1})`
 }
 
 export function calculateWinner(squares) {

@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import ReactDOM from 'react-dom';
 import Square from './square';
 
 it('renders without crashing', () => {
-  shallow(<Square />)
+  const div = document.createElement('div');
+  ReactDOM.render(<Square />, div)
 })
