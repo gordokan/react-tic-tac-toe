@@ -4,4 +4,4 @@ import Board from './board';
 
 it('renders without crashing', () => {
   shallow(<Board />)
-})
+});
